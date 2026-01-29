@@ -7,7 +7,7 @@ const MoviePreview = ({ movie }: { movie: Movie }) => {
     // A DEFINIR EXPERT
   };
   const imageUrl = `${POSTER_URL_PREFIX}${movie.poster_path}`;
-
+  const rating = movie.vote_average.toFixed(1);
   return (
     <div className={styles.movieCard} onClick={goToMovieDetails}>
       {/* 1. L'image du film */}
@@ -20,6 +20,10 @@ const MoviePreview = ({ movie }: { movie: Movie }) => {
       {/* 2. Le titre (optionnel mais recommandé pour savoir ce qu'on clique) */}
       <div className={styles.movieInfo}>
         <h3>{movie.title}</h3>
+      </div>
+      <div className={styles.ratingContainer}>
+          <span className={styles.ratingStar}>⭐</span>
+          <span className={styles.ratingValue}>{rating} / 10</span>
       </div>
     </div>
   )
