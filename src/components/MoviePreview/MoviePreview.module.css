@@ -1,2 +1,58 @@
 .movieCard {
+    /* 1. Mise en page Flexbox en colonne */
+  display: flex;
+  flex-direction: column;
+
+  /* 2. Dimensions et apparence de la carte */
+  width: 200px; /* Largeur fixe pour l'exemple, ou 100% selon votre grille */
+  border-radius: 8px; /* Coins arrondis */
+  overflow: hidden; /* Important : empêche l'image de dépasser des coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Une ombre légère */
+  background-color: #222; /* Fond sombre si l'image ne charge pas */
+  color: white;
+  cursor: pointer; /* Indique à l'utilisateur qu'il peut cliquer */
+  transition: transform 0.2s ease-in-out; /* Animation fluide au survol */
 }
+
+/* Effet au survol de la souris */
+.movieCard:hover {
+  transform: scale(0.05); /* Grossit légèrement la carte */
+}
+
+.moviePoster {
+  /* L'image prend toute la largeur de la carte */
+  width: 100%;
+  height: 300px; /* Hauteur fixe pour aligner toutes les cartes même si les images varient */
+  object-fit: cover; /* Recadre l'image proprement sans la déformer */
+}
+
+.movieInfo {
+  padding: 10px;
+  text-align: center;
+}
+
+.movieInfo h3 {
+  font-size: 1rem;
+  margin: 0;
+  /* Optionnel : pour couper le titre s'il est trop long avec "..." */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+    .ratingContainer {
+        display: flex;
+        align-items: center; /* Aligne l'étoile et le texte verticalement */
+        justify-content: center; /* Centre la note horizontalement */
+        margin-top: 8px; /* Un peu d'espace entre le titre et la note */
+        font-weight: bold;
+      }
+      
+      .ratingStar {
+        margin-right: 5px; /* Espace entre l'étoile et le chiffre */
+        font-size: 1.2rem;
+      }
+      
+      .ratingValue {
+        color: #ddd; /* Une couleur claire pour être lisible sur fond sombre */
+        font-size: 0.9rem;
+      }
